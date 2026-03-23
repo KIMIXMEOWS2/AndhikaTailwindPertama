@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en" id="main-html">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Mofulyen</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'class' }
+  </script>
+</head>
+
+<body class="bg-slate-50 dark:bg-slate-900 transition-colors duration-500 min-h-screen flex flex-col">
+
+  <header class="w-full h-16 bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 flex items-center px-6 shrink-0 z-20">
+    <div class="flex items-center space-x-3">
+      <div class="w-8 h-8 bg-indigo-600 rounded-lg"></div>
+      <span class="font-bold text-xl text-slate-800 dark:text-white">Mofulyen Dashboard</span>
+    </div>
+  </header>
+
+  <div class="flex flex-1">
+
+    <aside class="w-64 bg-slate-800 text-white flex flex-col p-5 shrink-0 sticky top-0 h-screen">
+      <h2 class="text-2xl font-bold mb-10 text-indigo-400">My App</h2>
+      <nav class="space-y-4 flex-1">
+        <a href="index.html" class="block p-3 rounded-lg bg-indigo-600 hover:bg-indigo-500 transition text-center">Dashboard</a>
+        <a href="projects.html" class="block p-3 rounded-lg hover:bg-slate-700 transition text-center">Projects</a>
+        <a href="team.html" class="block p-3 rounded-lg hover:bg-slate-700 transition text-center">Team</a>
+        <a href="setting.html" class="block p-3 rounded-lg hover:bg-slate-700 transition text-center">Settings</a>
+      </nav>
+      <div class="border-t border-slate-700 pt-5 text-center">
+        <p class="text-sm text-slate-400">Logged in as: <br><strong class="text-white">Mofulyen</strong></p>
+      </div>
+    </aside>
+
+    <main class="flex-1 p-10 bg-slate-50 dark:bg-slate-900 transition-colors">
+   
+        <div class="bg-white dark:bg-slate-800 rounded-xl p-8 shadow-xl ring-1 ring-slate-900/5 flex items-center space-x-6 mb-6">
+          <img class="h-24 w-24 rounded-full object-cover shrink-0 shadow-md border-2 border-indigo-500" src="image/one.jpeg" alt="Mofulyen" />
+          <div class="text-left">
+            <p class="text-xl font-bold text-slate-900 dark:text-white">Mofulyen Tanaka</p>
+            <p class="font-medium text-indigo-600 dark:text-indigo-400">Website Developer</p>
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-slate-800 rounded-xl px-6 py-8 shadow-xl ring-1 ring-slate-900/5 text-left">
+          <div class="w-10 h-10 bg-indigo-500 rounded-lg flex items-center justify-center mb-4">
+             <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+             </svg>
+          </div>
+          <h3 class="text-slate-900 dark:text-white text-lg font-bold">Writes upside-down</h3>
+          <p class="text-slate-500 dark:text-slate-400 mt-2 text-sm leading-relaxed">
+            The Zero Gravity Pen can be used to write in any orientation, termasuk di luar angkasa!
+          </p>
+        </div>
+
+    </main>
+  </div>
+
+  <script>
+    const htmlTag = document.getElementById('main-html');
+    const savedTheme = localStorage.getItem('theme');
+
+    if (savedTheme === 'dark') { htmlTag.classList.add('dark'); }
+
+    function toggleTheme() {
+      htmlTag.classList.toggle('dark');
+      localStorage.setItem('theme', htmlTag.classList.contains('dark') ? 'dark' : 'light');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en" id="main-html">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Mofulyen</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+    }
+  </script>
+</head>
+
+<body class="bg-slate-50 dark:bg-slate-900 transition-colors duration-500 min-h-screen flex flex-col">
+
+  <header class="w-full h-16 bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 flex items-center px-6 shrink-0 z-20">
+    <div class="flex items-center space-x-3">
+      <div class="w-8 h-8 bg-indigo-600 rounded-lg shadow-lg"></div>
+      <span class="font-bold text-xl text-slate-800 dark:text-white">Mofulyen Dashboard</span>
+    </div>
+  </header>
+
+  <div class="flex flex-1 overflow-hidden">
+
+    <aside class="w-64 bg-slate-800 text-white flex flex-col p-5 shrink-0 sticky top-0 h-screen">
+      <h2 class="text-2xl font-bold mb-10 text-indigo-400">My App</h2>
+      <nav class="space-y-4 flex-1">
+        <a href="index.html" class="block p-3 rounded-lg bg-indigo-600 hover:bg-indigo-500 transition text-center shadow-md">Dashboard</a>
+        <a href="projects.html" class="block p-3 rounded-lg hover:bg-slate-700 transition text-center">Projects</a>
+        <a href="team.html" class="block p-3 rounded-lg hover:bg-slate-700 transition text-center">Team</a>
+        <a href="setting.html" class="block p-3 rounded-lg hover:bg-slate-700 transition text-center">Settings</a>
+      </nav>
+      <div class="mt-auto border-t border-slate-700 pt-5 text-center">
+        <p class="text-sm text-slate-400">Logged in as: <br><strong class="text-white">Mofulyen</strong></p>
+      </div>
+    </aside>
+
+    <div class="p-6 m-6 bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700">
+  <h3 class="text-lg font-bold text-slate-800 dark:text-white mb-4 p-4">My Tech Stack</h3>
+  
+  <div class="grid grid-flow-col grid-rows-4 gap-4">
+    
+    <div class="flex items-center space-x-3 p-3 bg-slate-50 dark:bg-slate-900/50 rounded-xl border border-slate-100 dark:border-slate-700">
+      <span class="text-orange-500 font-bold">01</span>
+      <span class="text-sm font-medium dark:text-slate-300">HTML 5</span>
+    </div>
+    <div class="flex items-center space-x-3 p-3 bg-slate-50 dark:bg-slate-900/50 rounded-xl border border-slate-100 dark:border-slate-700">
+      <span class="text-blue-500 font-bold">02</span>
+      <span class="text-sm font-medium dark:text-slate-300">Tailwind CSS</span>
+    </div>
+    <div class="flex items-center space-x-3 p-3 bg-slate-50 dark:bg-slate-900/50 rounded-xl border border-slate-100 dark:border-slate-700">
+      <span class="text-yellow-500 font-bold">03</span>
+      <span class="text-sm font-medium dark:text-slate-300">JavaScript</span>
+    </div>
+    <div class="flex items-center space-x-3 p-3 bg-slate-50 dark:bg-slate-900/50 rounded-xl border border-slate-100 dark:border-slate-700">
+      <span class="text-purple-500 font-bold">04</span>
+      <span class="text-sm font-medium dark:text-slate-300">PHP & Laravel</span>
+    </div>
+
+    <div class="flex items-center space-x-3 p-3 bg-slate-50 dark:bg-slate-900/50 rounded-xl border border-slate-100 dark:border-slate-700">
+      <span class="text-red-500 font-bold">05</span>
+      <span class="text-sm font-medium dark:text-slate-300">Java Programming</span>
+    </div>
+    <div class="flex items-center space-x-3 p-3 bg-slate-50 dark:bg-slate-900/50 rounded-xl border border-slate-100 dark:border-slate-700">
+      <span class="text-cyan-500 font-bold">06</span>
+      <span class="text-sm font-medium dark:text-slate-300">MySQL Database</span>
+    </div>
+    <div class="flex items-center space-x-3 p-3 bg-slate-50 dark:bg-slate-900/50 rounded-xl border border-slate-100 dark:border-slate-700">
+      <span class="text-green-500 font-bold">07</span>
+      <span class="text-sm font-medium dark:text-slate-300">Git & GitHub</span>
+    </div>
+    <div class="flex items-center space-x-3 p-3 bg-slate-50 dark:bg-slate-900/50 rounded-xl border border-slate-100 dark:border-slate-700">
+      <span class="text-pink-500 font-bold">08</span>
+      <span class="text-sm font-medium dark:text-slate-300">Roblox Scripting</span>
+    </div>
+
+  </div>
+</div>
+
+  </div> <script>
+    // 1. Cek saat halaman pertama kali dibuka
+    const htmlTag = document.getElementById('main-html');
+    const savedTheme = localStorage.getItem('theme');
+
+    if (savedTheme === 'dark') {
+      htmlTag.classList.add('dark');
+    }
+
+    // 2. Fungsi tombol untuk ubah & simpan tema
+    function toggleTheme() {
+      htmlTag.classList.toggle('dark');
+      
+      // Simpan status
+      if (htmlTag.classList.contains('dark')) {
+        localStorage.setItem('theme', 'dark');
+      } else {
+        localStorage.setItem('theme', 'light');
+      }
+    }
+  </script>
+
+</body>
+</html>
